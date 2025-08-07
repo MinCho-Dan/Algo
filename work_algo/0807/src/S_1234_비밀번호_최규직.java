@@ -1,17 +1,14 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 public class S_1234_비밀번호_최규직 {
 	
 	private static int N;
 	private static int[] num;
-	private static int cnt;
-	private static int[] result;
+	private static Deque<Integer> stack = new ArrayDeque<>();
  
-    @SuppressWarnings("unchecked")
 	public static void main(String[] args) throws Exception {
  
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
@@ -19,7 +16,7 @@ public class S_1234_비밀번호_최규직 {
         
 //        Integer.parseInt(in.readLine()); // TC 개수 버리기
          
-        for (int test_case = 1; test_case <= 1; test_case++) {
+        for (int test_case = 1; test_case <= 10; test_case++) {
             sb.append("#" + test_case + " ");
              
             String[] split = in.readLine().split(" ");
@@ -29,40 +26,27 @@ public class S_1234_비밀번호_최규직 {
             for (int i = 0; i < N; i++) {
             	num[i] = Character.getNumericValue(tmp.charAt(i));
             }
-
-            cnt = 0;
-            String res = password(num);
             
-            sb.append(res);
+            // 스택에 넣을때 탑에 있는 숫자와 같다면 삭제
+            for (int i = N-1; i >= 0 ; i--) { 
+				if (!stack.isEmpty() && stack.peek() == num[i]) {stack.pop();}
+				else stack.push(num[i]);
+			}
+
+            // 스택 사이즈만큼 반복문으로 sb에 append하기
+            int cnt = stack.size();
+            for (int i = 0; i < cnt; i++) {
+            	sb.append(stack.pop());
+            }
+            sb.append("\n");
+
         }
         System.out.println(sb);
     }
-
-	private static String password(int[] num) {
-		
-		for (int i = 0; i < num.length-1; i++) {
-			cnt = 0;
-			if (num[i] != num[i+1]) {
-				 += num[i];
-			}
-			else cnt++;
-
-			if (cnt==0) return result;
-		}
-	}
- 
 }
 
-
-
-
 /*
- * N * N의 행렬에서 상하좌우 인접한 위치가 +1값이면 이동 가능.
- * 그렇게 이동해서 최대한 많이 움직이는 경우의 시작점의 값.
- * 많이 움직이는 경우가 여럿이라면 그중에 시작점의 숫자가 가장 작은 값 출력.
- * 
- * 
- * 
- * 
- * 
+ * 스택에 넣기전에 탑에 있는 숫자가 같은숫자면 pop해서 삭제.
+ * input값 전부를 for문으로 끝까지 돌리고
+ * 마지막에 스택안에 숫자들 꺼내서 출력하면 될듯
 */

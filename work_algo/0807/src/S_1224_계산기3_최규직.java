@@ -6,15 +6,16 @@ import java.util.Deque;
 public class S_1224_계산기3_최규직 {
 	
 	private static int N;
+	private static Deque<String> stack = new ArrayDeque<>();
  
 	public static void main(String[] args) throws Exception {
  
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
         
-        for (int test_case = 1; test_case <= 1; test_case++) {
+        for (int test_case = 1; test_case <= 10; test_case++) {
             sb.append("#" + test_case + " ");
-            Deque<String> stack = new ArrayDeque<>();
+            
             		
             N = Integer.parseInt(in.readLine());
             
@@ -56,28 +57,41 @@ public class S_1224_계산기3_최규직 {
             }
             while (!stack.isEmpty()){temp.append(stack.pop());}
             
+//            System.out.println("후위식은 : " + temp);
+            
             // 후위계산식을 계산하기
-//            String[] tmp2 = temp.toString().split("");
-//            StringBuilder temp2 = new StringBuilder();
-//            for (int i = 0; i < N; i++) {
-//            	if (tmp2[i].equals("/")|| // 연산자를 만나면
-//        			tmp2[i].equals("*")||
-//        			tmp2[i].equals("+")||
-//        			tmp2[i].equals("-")) {
-//            		int a = Integer.parseInt(stack.pop());
-//            		int b = Integer.parseInt(stack.pop());
-//            	}
-//            }
+            String[] tmp2 = temp.toString().split("");
+            StringBuilder temp2 = new StringBuilder();
+            int w = -1;
+            for (int i = 0; i < temp.length(); i++) {
+            	if (tmp2[i].equals("/")) {stack.push(Integer.toString(cal(1)));}
+            	else if (tmp2[i].equals("*")) {stack.push(Integer.toString(cal(2)));}
+            	else if (tmp2[i].equals("+")) {stack.push(Integer.toString(cal(3)));}
+            	else if (tmp2[i].equals("-")) {stack.push(Integer.toString(cal(4)));}
+        		else {stack.push(tmp2[i]);}
+            	}
+            temp2.append(stack.pop());
+//            System.out.println("계산한 값은 : " + temp2);
+            sb.append(temp2+"\n");
+            }
+
             
-            
-            
-            System.out.println("후위식은 : " + temp);
-           
-            
-//            sb.append(res);
-        }
-//        System.out.println(sb);
-    }
+      System.out.println(sb);
+	}
+
+
+	
+	private static int cal(int w) {
+		
+		int a = Integer.parseInt(stack.pop());
+		int b = Integer.parseInt(stack.pop());
+		
+		if (w == 1) {return a/b;}
+		else if (w == 2) {return a*b;}
+		else if (w == 3) {return a+b;}
+		else {return a-b;}
+	}
+	
 }
 
 
