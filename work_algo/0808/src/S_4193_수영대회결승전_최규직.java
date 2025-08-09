@@ -1,18 +1,25 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.lang.reflect.Array;
 import java.util.ArrayDeque;
-import java.util.Arrays;
 import java.util.Queue;
 
 public class S_4193_수영대회결승전_최규직 {
+	
+	private static class Point {
+        int x, y, time;
 
-	private static int N; // 길이
-	private static int result;
-	private static int[][] sea; // 바다
-	private static int[][] visited;
-	private static int[] dx = {-1, 1, 0, 0}; // 상하좌우 순서로
-    private static int[] dy = {0, 0, -1, 1}; // 상하좌우 순서로
+        public Point(int x, int y, int time) {
+            this.x = x;
+            this.y = y;
+            this.time = time;
+        }
+    }
+
+	private static int N; // 수영장 크기
+	private static int[][] sea; // 수영장 정보 (0: 물, 1: 장애물, 2: 소용돌이)
+	private static int startX, startY, endX, endY; // 시작점과 도착점 좌표
+    private static int[] dx = {-1, 1, 0, 0}; // 상하 이동 (행 변화)
+    private static int[] dy = {0, 0, -1, 1}; // 좌우 이동 (열 변화)
  
     public static void main(String[] args) throws Exception {
  
@@ -27,25 +34,23 @@ public class S_4193_수영대회결승전_최규직 {
             N = Integer.parseInt(in.readLine());
             
             sea = new int[N][N];
-            visited = new int[N][N];
             for (int i = 0; i < N; i++) {
             	String[] tmp = in.readLine().split(" ");
                 for (int j = 0; j < N; j++) {
                 	sea[i][j] = Integer.parseInt(tmp[j]);
-                	visited[i][j] = Integer.MAX_VALUE;
                 }
             }
             
             String[] tmp = in.readLine().split(" ");
-            int startX = Integer.parseInt(tmp[0]);
-            int startY = Integer.parseInt(tmp[1]);
+            startX = Integer.parseInt(tmp[0]);
+            startY = Integer.parseInt(tmp[1]);
             
             tmp = in.readLine().split(" ");
-            int endX = Integer.parseInt(tmp[0]);
-            int endY = Integer.parseInt(tmp[1]);
+            endX = Integer.parseInt(tmp[0]);
+            endY = Integer.parseInt(tmp[1]);
             
 
-            result = bfs(startX, startY, endX, endY);
+            int result = bfs();
 
            
             sb.append(result + "\n");
@@ -53,61 +58,64 @@ public class S_4193_수영대회결승전_최규직 {
         System.out.println(sb);
     }
      
-    private static int bfs(int startX, int startY, int endX, int endY) {
-		
-    	Queue<int[]> queue = new ArrayDeque<>(); // 큐선언
-    	
-    	// 큐에 {x, y, time} 형태로 저장
-        queue.offer(new int[]{startX, startY, 0});
-        
-        // 위에서 max value로 채워놓은것, 0초부터 시작
-        visited[startX][startY] = 0; 
+    private static int bfs() {
+        // 방문 배열: visited[x좌표(행)][y좌표(열)][시간 % 3]
+        boolean[][][] visited = new boolean[N][N][3];
+        Queue<Point> queue = new ArrayDeque<>();
+
+        // 시작점 큐에 추가 및 방문 처리
+        queue.offer(new Point(startX, startY, 0));
+        visited[startX][startY][0] = true;
 
         while (!queue.isEmpty()) {
-            int[] current = queue.poll();
-            int x = current[0];
-            int y = current[1];
-            int time = current[2];
-            
-            // 도착지점이라면 시간을 리턴하고 끝내기
-            if (x == endX && y == endY) {return time;}
- 
-            for (int i = 0; i < 4; i++) {// 4방향 이동하기.
-                int nx = x + dx[i];
-                int ny = y + dy[i];
+            Point current = queue.poll();
+            int x = current.x;
+            int y = current.y;
+            int time = current.time;
 
-                // sea 범위 넘어가면 패스
-                if (nx < 0 || nx >= N || ny < 0 || ny >= N) {continue; }
-                
-                // 장애물 패스
-                if (sea[nx][ny] == 1) {continue;} 
-                
-                // 소용돌이를 만났다면
-                if (sea[nx][ny] == 2) { 
-                    int waitTime = 0;
-                    if (time % 3 != 2) { // (시간%3=2)일때 소용돌이는 없어짐
-                        waitTime = 2 - (time % 3); // 소용돌이가 있다면 기다려야할 시간
-                    }
-                    // 소용돌이가 사라지길 기다렸다가 다음 지점에 도착하는 최종시간 도출
-                    int newTime = time + waitTime + 1;
+            // 도착점에 도달하면 현재 시간 반환
+            if (x == endX && y == endY) {
+                return time;
+            }
 
-                    // 위의 최종시간보다 더 빠른 경로일 경우에만 큐에 추가하기.
-                    if (newTime < visited[nx][ny]) {
-                        visited[nx][ny] = newTime;
-                        queue.offer(new int[]{nx, ny, newTime});
-                    }
-                }
-                
-                else { // 갈 수 있는 경우(sea 범위내이고, 장애물이 아니고, 소용돌이도 아닌경우.)
-                    int newTime = time + 1;
+            int nextTime = time + 1;
+            int nextTimeMod = nextTime % 3;
 
-                    if (newTime < visited[nx][ny]) { // 더 빠른 경로일때만 큐에 추가.
-                        visited[nx][ny] = newTime;
-                        queue.offer(new int[]{nx, ny, newTime});
+            // 1. 상하좌우 이동 탐색
+            for (int i = 0; i < 4; i++) {
+                int nx = x + dx[i]; // 다음 행
+                int ny = y + dy[i]; // 다음 열
+
+                // 경계 체크
+                if (nx < 0 || nx >= N || ny < 0 || ny >= N) continue;
+                // 장애물 체크 (map[행][열] -> map[nx][ny])
+                if (sea[nx][ny] == 1) continue;
+                // 방문 체크
+                if (visited[nx][ny][nextTimeMod]) continue;
+
+                // 이동할 곳이 소용돌이인 경우
+                if (sea[nx][ny] == 2) {
+                    // 소용돌이는 2초 유지, 1초 잠잠. 즉, time % 3 == 2 일 때 잠잠.
+                    // 현재 시간(time)을 기준으로 다음 시간(nextTime)에 소용돌이가 잠잠해야 통과 가능.
+                    if (time % 3 != 2) {
+                        continue; // 소용돌이가 활성화 상태이므로 통과 불가
                     }
                 }
+                
+                // 모든 조건을 통과하면 큐에 추가 및 방문 처리
+                visited[nx][ny][nextTimeMod] = true;
+                queue.offer(new Point(nx, ny, nextTime));
+            }
+
+            // 2. 제자리에서 기다리기
+            // 시작점이 아니라면 제자리에서 기다려서 다음 시간을 모색
+            if (!visited[x][y][nextTimeMod]) {
+                visited[x][y][nextTimeMod] = true;
+                queue.offer(new Point(x, y, nextTime));
             }
         }
+
+        // 도착점에 도달할 수 없는 경우
         return -1;
     }
 }
@@ -121,4 +129,7 @@ public class S_4193_수영대회결승전_최규직 {
  * 시간 % 3 했을때 2
  * 장애물(1)은 그냥 못가는곳으로 보면 되고..
  * 테케 15개 중에 9개 PASS...
+ * -> 원래 소용돌이를 만났을때, 시간에따라 대기값을 계산했었는데
+ * -> 그냥 4방향 이동 로직을 for문으로 짜고, 추가로 대기해보는 경우의 수도 추가 했음.
+ * 4방향 + 기다리기 모두를 수행하도록 DFS를 짜니까 PASS하는거 같다.
 */
