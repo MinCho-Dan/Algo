@@ -5,6 +5,8 @@ import java.util.Collections;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
+// 못풀었음... 풀어보는 중....
+
 public class S_1248_공통조상_최규직 {
 	
 	private static int V;
@@ -37,7 +39,6 @@ public class S_1248_공통조상_최규직 {
             	int x = Integer.parseInt(temp[i]);
             	int y = Integer.parseInt(temp[i+1]);
             	xy[x][y] = 1;
-            	xy[y][x] = 1; // 빼면 단방향
 			}
             
             Queue<Integer> startQ = new PriorityQueue<>();
@@ -60,9 +61,9 @@ public class S_1248_공통조상_최규직 {
             
             int parent = 0;
             for (int i = 0; i < Integer.min(startTemp.size(), endTemp.size()); i++) {
-            	System.out.println(startTemp.get(i) + " 비교 " + endTemp.get(i));
+//            	System.out.println(startTemp.get(i) + " 비교 " + endTemp.get(i));
 				if (startTemp.get(i) != endTemp.get(i)) {
-					System.out.println(startTemp.get(i) + " 흐음 " + endTemp.get(i));
+//					System.out.println(startTemp.get(i) + " 흐음 " + endTemp.get(i));
 					parent = i-1;
 				}
 			}
