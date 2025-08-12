@@ -97,7 +97,7 @@ public class CompleteBinaryTree<T> {
 	
 	// 전위 순회
 	public void dfsByPreOrder() {
-		System.out.println("PreOrder : ");
+		System.out.print("PreOrder : ");
 		dfsByPreOrder(1); // 트리라서 1번정점부터.
 		System.out.println();
 		
@@ -123,7 +123,7 @@ public class CompleteBinaryTree<T> {
 	
 	// 중위 순회
 	public void dfsByInOrder() {
-		System.out.println("InOrder : ");
+		System.out.print("InOrder : ");
 		dfsByInOrder(1); // 트리라서 1번정점부터.
 		System.out.println();
 		
@@ -149,7 +149,7 @@ public class CompleteBinaryTree<T> {
 	
 	// 후위 순회
 		public void dfsByPostOrder() {
-			System.out.println("InOrder : ");
+			System.out.print("PostOrder : ");
 			dfsByPostOrder(1); // 트리라서 1번정점부터.
 			System.out.println();
 			
