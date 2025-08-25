@@ -16,22 +16,7 @@ public class M_15683_감시_최규직 {
 	    		office[i][j] = Integer.parseInt(tmp[j]); // 사무실 행렬 입력
 			}
 	    }
-	    
-	    // 인접행렬 생성
-	    int[][] adj = new int[N + 1][N + 1];
-	    for (int from = 1; from <= N; from++) {
-            String[] temp = br.readLine().split(" ");
-            int num = Integer.parseInt(temp[0]);
-            for (int j = 1; j <= num; j++) {
-            	int to = Integer.parseInt(temp[j]);
-            	adj[from][to] = 1;
-            	adj[to][from] = 1;
-            }
-        }
-	    
-        System.out.println();
-        
-       
+
         
     }
 }
