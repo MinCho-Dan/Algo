@@ -11,7 +11,6 @@ public class M_1697_숨바꼭질_최규직 {
 	static int sec;
 
 	
-	@SuppressWarnings("unused")
 	public static void main(String[] args) throws Exception {
 		
 		Scanner sc = new Scanner(System.in);

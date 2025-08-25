@@ -10,7 +10,7 @@ public class M_1260_DFS와BFS_최규직 {
 	private static int V;
 	private static int[][] adjMatrix; // 인접행렬
 	
-	@SuppressWarnings("unused")
+
 	public static void main(String[] args) throws Exception {
 		
 		Scanner sc = new Scanner(System.in);

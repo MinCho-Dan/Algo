@@ -50,7 +50,7 @@ public class S_4008_숫자만들기_최규직 {
 		else {
 			if (opArr[0]!=0) {
 				opArr[0]--;
-				solve(cnt+1, value + );
+				solve(cnt+1, value++ );
 			}
 			
 			
