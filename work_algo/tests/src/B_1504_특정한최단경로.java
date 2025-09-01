@@ -61,9 +61,7 @@ public class B_1504_특정한최단경로 {
 			b = result21 + result22 + result23;
 		}
 		
-		if ( a > 0 && b > 0 ) {
-			System.out.println(Integer.min(a, b));
-		}
+		if ( a > 0 && b > 0 ) System.out.println(Integer.min(a, b));
 		else if (a>0) System.out.println(a);
 		else if (b>0) System.out.println(b);
 		else System.out.println(-1);
