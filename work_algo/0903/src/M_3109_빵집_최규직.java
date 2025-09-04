@@ -11,6 +11,6 @@ public class M_3109_빵집_최규직 {
 	public static void main(String[] args) throws Exception {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		
-		// "제빵사 김원웅은 가스도둑"
+
 	}
 }
