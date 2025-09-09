@@ -1,4 +1,4 @@
-package com.ssafy.live14;
+package com.ssafy.live15;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -69,14 +69,14 @@ public class FiboTest {
         
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-//        System.out.println(fibo(n));
-//        System.out.println("재귀호출 횟수 : " + callCnt);
-//        
-//        memo = new long[n + 1];
-//        Arrays.fill(memo, -1);
-//        callCnt = 0;
-//        System.out.println(fiboMemo(n));
-//        System.out.println("메모이제이션 횟수 : " + callCnt);
+        System.out.println(fibo(n));
+        System.out.println("재귀호출 횟수 : " + callCnt);
+        
+        memo = new long[n + 1];
+        Arrays.fill(memo, -1);
+        callCnt = 0;
+        System.out.println(fiboMemo(n));
+        System.out.println("메모이제이션 횟수 : " + callCnt);
         
         callCnt = 0;
         System.out.println(fiboDP(n));
