@@ -1,4 +1,4 @@
-package Maraton;
+package Maraton72;
 
 public class BJ_9654 {
 	public static void main(String[] args) {

@@ -1,3 +1,4 @@
+package test;
 import java.util.Scanner;
 
 public class S_7465_창용마을무리의개수 {

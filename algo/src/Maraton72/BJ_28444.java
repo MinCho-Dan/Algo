@@ -1,4 +1,4 @@
-package Maraton;
+package Maraton72;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
