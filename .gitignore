@@ -1,10 +1,28 @@
+# --- Java & Build ---
+*.class
 **/bin/
-**/.settings/
-**/.metadata/
-**/.recommenders/
-**/.idea/
-**/Servers/
 **/target/
 **/build/
+
+# --- Eclipse Settings ---
+.project
+.classpath
+.settings/
+.metadata/
+.recommenders/
+
+# --- IntelliJ Settings ---
+.idea/
+*.iml
+*.iws
+out/
+
+# --- VS Code Settings ---
+.vscode/
+
+# --- OS & ETC ---
+.DS_Store
+Thumbs.db
+*.log
 **/node_modules/
-**/.vscode/
+**/Servers/
