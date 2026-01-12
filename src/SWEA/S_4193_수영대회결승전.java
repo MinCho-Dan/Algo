@@ -3,7 +3,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayDeque;
 import java.util.Queue;
 
-public class S_4193_수영대회결승전_최규직 {
+public class S_4193_수영대회결승전 {
 	
 	private static class Point {
         int x, y, time;

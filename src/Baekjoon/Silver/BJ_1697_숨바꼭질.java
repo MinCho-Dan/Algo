@@ -2,7 +2,7 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class M_1697_숨바꼭질_최규직 {
+public class BJ_1697_숨바꼭질 {
 	
 
 	private static int N;

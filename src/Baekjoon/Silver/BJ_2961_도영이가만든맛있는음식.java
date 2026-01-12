@@ -1,7 +1,7 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class M_2961_도영이가만든맛있는음식_최규직 {
+public class BJ_2961_도영이가만든맛있는음식 {
 
     private static int N;
     private static int[][] ingredients;

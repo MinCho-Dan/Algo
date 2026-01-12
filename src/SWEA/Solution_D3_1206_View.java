@@ -7,7 +7,7 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 
-public class Solution_D3_1206_View_최규직 {
+public class Solution_D3_1206_View {
 	
 	private static int[] h; // 건물 높이를 저장할 배열
 	

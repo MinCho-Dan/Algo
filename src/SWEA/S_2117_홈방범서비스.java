@@ -1,7 +1,7 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class S_2117_홈방범서비스_최규직 {
+public class S_2117_홈방범서비스 {
 	
 	static int N, M;
 

@@ -3,7 +3,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayDeque;
 import java.util.Queue;
 
-public class S_1238_Contact_최규직 {
+public class S_1238_Contact {
 
 	private static int N; // 길이
 	private static int start; // 시작점

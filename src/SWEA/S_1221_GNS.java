@@ -1,7 +1,7 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class S_1221_GNS_최규직 {
+public class S_1221_GNS {
 	
 	
 	public static void main(String[] args) throws Exception {

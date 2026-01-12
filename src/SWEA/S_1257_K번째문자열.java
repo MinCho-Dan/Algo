@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 
-public class S_1257_K번째문자열_최규직 {
+public class S_1257_K번째문자열 {
 	
 	
 	public static void main(String[] args) throws Exception {

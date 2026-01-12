@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class M_15649_N과M1_최규직 {
+public class BJ_15649_N과M1 {
 	
 	private static int N; // 총 원소의 개수
 	private static int R; // 뽑을 원소의 개수

@@ -8,7 +8,7 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
-public class Solution_D3_1208_Flatten_최규직 {
+public class Solution_D3_1208_Flatten {
 	
 	private static int[] w; // 가로 100의 배열
 

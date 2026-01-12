@@ -2,7 +2,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
-public class S_1251_하나로_최규직 {
+public class S_1251_하나로 {
 	
 	private static Edge[] edgeList;
 	private static int N; // 원소의 개수

@@ -6,7 +6,7 @@ import java.util.Queue;
 
 // Prim 알고리즘 버전
 
-public class S_3124_최소스패닝트리_최규직 {
+public class S_3124_최소스패닝트리_인접리스트 {
 
 	private static class Vertex {
 		public int vertex;

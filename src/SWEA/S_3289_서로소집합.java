@@ -1,7 +1,7 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class S_3289_서로소집합_최규직 {
+public class S_3289_서로소집합 {
 
 	private static int N;
 	private static int M;

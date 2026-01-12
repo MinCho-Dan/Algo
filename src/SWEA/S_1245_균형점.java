@@ -1,9 +1,8 @@
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.StringTokenizer;
 
-class S_1245_균형점_최규직 {
+class S_1245_균형점 {
 	
 	static int N;
 	static xy company, home;

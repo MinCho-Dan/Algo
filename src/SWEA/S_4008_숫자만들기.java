@@ -1,7 +1,7 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class S_4008_숫자만들기_최규직 {
+public class S_4008_숫자만들기 {
 
 	private static int N, M, maxans, minans;
 	private static int[] opArr; // 연산자 개수 카운팅

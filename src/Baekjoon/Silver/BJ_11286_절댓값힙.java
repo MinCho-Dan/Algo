@@ -3,7 +3,7 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class M_11286_절댓값힙_최규직 {
+public class BJ_11286_절댓값힙 {
 	
 	
 	public static void main(String[] args) throws Exception {

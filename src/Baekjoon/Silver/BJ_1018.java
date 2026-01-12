@@ -7,7 +7,6 @@ public class BJ_1018 {
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringBuilder sb = new StringBuilder();
 		
 		String[] tmp = br.readLine().split(" ");
 		int N = Integer.parseInt(tmp[0]);

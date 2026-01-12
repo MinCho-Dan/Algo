@@ -1,7 +1,7 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
  
-public class S_1226_미로1_최규직 {
+public class S_1226_미로1_dfs {
          
     private static final int Size = 16;
     private static int[][] maze;

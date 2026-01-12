@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class S_1767_프로세서연결하기_최규직 {
+public class S_1767_프로세서연결하기 {
 	
 	static class Core {
         int r, c;

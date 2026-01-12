@@ -2,7 +2,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class S_1263_사람네트워크2_최규직 {
+public class S_1263_사람네트워크2 {
 
 	static final int INF = 100001; // 최대 인원수(100) * 최대 거리(1000)보다 큰 값으로 설정
 

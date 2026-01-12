@@ -1,7 +1,7 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class B_11727_2Xn타일링2 {
+public class BJ_11727_2Xn타일링2 {
 	
 	
 	public static void main(String[] args) throws Exception {

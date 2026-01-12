@@ -22,7 +22,7 @@ class Edge implements Comparable<Edge> {
     }
 }
 
-public class B_1446_지름길 {
+public class BJ_1446_지름길 {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());

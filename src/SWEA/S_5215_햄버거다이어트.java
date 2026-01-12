@@ -1,7 +1,7 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class S_5215_햄버거다이어트_최규직 {
+public class S_5215_햄버거다이어트 {
 	
 	
 	public static void main(String[] args) throws Exception {

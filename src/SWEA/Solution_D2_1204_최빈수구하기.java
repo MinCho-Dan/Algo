@@ -7,7 +7,7 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 
-public class Solution_D2_1204_최빈수구하기_최규직 {
+public class Solution_D2_1204_최빈수구하기 {
 	
 	private static int[] counter; // 빈도 수를 저장할 배열
 	

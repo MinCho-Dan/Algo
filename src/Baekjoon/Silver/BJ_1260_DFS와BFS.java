@@ -2,7 +2,7 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class M_1260_DFS와BFS_최규직 {
+public class BJ_1260_DFS와BFS {
 	
 
 	private static int N; // 정점개수

@@ -2,7 +2,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
  
-public class S_1219_길찾기_최규직 {
+public class S_1219_길찾기 {
          
     private static int N;
     private static ArrayList<Integer>[] adjList;

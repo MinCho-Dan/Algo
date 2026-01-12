@@ -2,7 +2,7 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class S_1209_Sum_최규직 {
+public class S_1209_Sum {
 	
 	private static int[][] arr; // 100x100의 배열
 	private static String[] tmp;

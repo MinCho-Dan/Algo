@@ -1,7 +1,7 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class S_1861_정사각형방__최규직 {
+public class S_1861_정사각형방 {
 
 	private static int N;
 	private static int[][] room; // 방 배열

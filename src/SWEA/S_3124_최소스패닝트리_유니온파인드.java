@@ -3,7 +3,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 
 
-public class S_3124_최소스패닝트리_최규직 {
+public class S_3124_최소스패닝트리_유니온파인드 {
 
 	// 1. 간선 리스트 준비
 	private static class Edge implements Comparable<Edge> {

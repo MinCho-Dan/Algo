@@ -1,7 +1,7 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class S_4014_활주로건설_최규직 {
+public class S_4014_활주로건설 {
 	
 	static int N, X;
 

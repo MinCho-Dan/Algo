@@ -3,7 +3,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-public class S_1224_계산기3_최규직 {
+public class S_1224_계산기3 {
 	
 	private static int N;
 	private static Deque<String> stack = new ArrayDeque<>();

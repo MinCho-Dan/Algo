@@ -3,7 +3,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayDeque;
 import java.util.Queue;
  
-public class S_1226_미로1_최규직 {
+public class S_1226_미로1_bfs {
          
     private static final int Size = 16;
     private static int[][] maze;

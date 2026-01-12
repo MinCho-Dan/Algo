@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class M_15650_N과M2_최규직 {
+public class BJ_15650_N과M2 {
 	
 	private static int N;
 	private static int R;

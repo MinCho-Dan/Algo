@@ -3,7 +3,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class B_1913_달팽이_안에서밖으로 {
+public class BJ_1913_달팽이_안에서밖으로 {
 
 	public static void main(String[] args) throws Exception {
 		

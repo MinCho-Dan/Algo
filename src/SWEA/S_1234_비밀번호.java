@@ -3,7 +3,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-public class S_1234_비밀번호_최규직 {
+public class S_1234_비밀번호 {
 	
 	private static int N;
 	private static int[] num;

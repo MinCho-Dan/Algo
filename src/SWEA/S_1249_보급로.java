@@ -8,7 +8,7 @@ import java.io.InputStreamReader;
 // 자바 기준 20초 이내인 문제라 PASS는 되는데...
 
 
-public class S_1249_보급로_최규직 {
+public class S_1249_보급로 {
 	
 	static int N, K;
 	static int[][] map, dist;

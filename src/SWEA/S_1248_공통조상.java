@@ -7,7 +7,7 @@ import java.util.Queue;
 
 // 못풀었음... 풀어보는 중....
 
-public class S_1248_공통조상_최규직 {
+public class S_1248_공통조상 {
 	
 	private static int V;
 	private static int E;

@@ -4,7 +4,7 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 
 
-public class B_2468_안전영역 {
+public class BJ_2468_안전영역 {
 	
 	static int N, cnt;
 	static boolean[][] visited;

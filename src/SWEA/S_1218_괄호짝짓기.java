@@ -1,7 +1,7 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class S_1218_괄호짝짓기_최규직 {
+public class S_1218_괄호짝짓기 {
 		
 	private static String[] arr;
 	private static int[] judge;
