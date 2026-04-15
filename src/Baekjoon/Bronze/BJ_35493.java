@@ -19,16 +19,19 @@ public class BJ_35493 {
 		if (sum % 2 == 0) {
 			System.out.println("YES");
 			return;
-		} else {
-			for (int i = 0; i < n; i++) {
-				sum -= arr[i];
-				if (sum % 2 == 0) {
-					System.out.println("YES");
-					return;
-				}
-				sum += arr[i];
-			}
-			System.out.println("NO");
 		}
+		
+        if (n == 1) {
+            System.out.println("NO");
+            return;
+        }
+		
+        for (int i = 0; i < n; i++) {
+            if (arr[i] % 2 != 0) {
+                System.out.println("YES");
+                return;
+            }
+        }
+		System.out.println("NO");
     }
 }
